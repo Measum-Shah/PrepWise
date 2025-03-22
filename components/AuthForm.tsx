@@ -1,6 +1,6 @@
 
 "use client"
-import React, { ReactNode } from 'react'
+// import React, { ReactNode } from 'react'
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -18,11 +18,11 @@ import { useRouter } from "next/navigation";
 
 const authFormSchema = (type: FormType) => {
   return z.object({
-    name: z.string().optional(),
-    //  type === 'sign-ip' ? z.string().min(3) :
+    name: type === 'sign-up' ? z.string().min(3) : z.string().optional(),
     email: z.string().email(),
-    password: z.string().min(6)}
-  )}
+    password: z.string().min(6)
+  });
+}
 
 const AuthForm = ({ type }: { type: FormType }) => {
 
@@ -39,7 +39,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
 
   const router = useRouter();
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit() {
     try{
      
       if(type==='sign-in'){

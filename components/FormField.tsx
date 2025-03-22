@@ -9,13 +9,12 @@ import { Input } from "@/components/ui/input"
 import { Controller, FieldValues,Path,Control} from 'react-hook-form'
 
 
-interface FormFieldProps<T> extends FieldValues{
-  control : Control;
-  name:Path<T>;
-  label:string;
+interface FormFieldProps<T extends FieldValues> {
+  control: Control<T>;
+  name: Path<T>;
+  label: string;
   placeholder?: string;
-  type? : 'text' | 'email' | 'password' | 'file';
-
+  type?: 'text' | 'email' | 'password' | 'file';
 }
 
 const FormField = ({control,name,label,placeholder,type="text"}:FormFieldProps<T>) => {
