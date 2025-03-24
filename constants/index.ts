@@ -1,4 +1,4 @@
-import { CreateAssistantDTO } from "@vapi-ai/web/dist/api";
+// import { CreateAssistantDTO } from "@vapi-ai/web/dist/api";
 import { z } from "zod";
 
 export const mappings = {
@@ -203,3 +203,68 @@ export const interviewCovers = [
   "/tiktok.png",
   "/yahoo.png",
 ];
+
+export const dummyInterviews: Interview[] = [
+  {
+    id: "1",
+    role: "Frontend Developer",
+    level: "Junior",
+    questions: ["What is React.js?", "How does the Virtual DOM work?"],
+    techstack: ["React.js", "JavaScript", "HTML", "CSS"],
+    createdAt: "2025-03-24T10:00:00Z",
+    userId: "user1",
+    type: "Technical",
+    finalized: true,
+  },
+  {
+    id: "2",
+    role: "Backend Developer",
+    level: "Mid-Level",
+    questions: ["What is Node.js?", "Explain event-driven architecture."],
+    techstack: ["Node.js", "Express.js", "MongoDB"],
+    createdAt: "2025-03-24T11:30:00Z",
+    userId: "user2",
+    type: "Technical",
+    finalized: false,
+  },
+  {
+    id: "3",
+    role: "Full-Stack Developer",
+    level: "Senior",
+    questions: ["What is REST API?", "Compare SQL vs NoSQL databases."],
+    techstack: ["React.js", "Node.js", "MongoDB", "PostgreSQL"],
+    createdAt: "2025-03-24T12:45:00Z",
+    userId: "user3",
+    type: "Behavioral & Technical",
+    finalized: true,
+  },
+  {
+    id: "4",
+    role: "Data Scientist",
+    level: "Mid-Level",
+    questions: [
+      "What is the difference between supervised and unsupervised learning?",
+      "Explain the concept of overfitting.",
+    ],
+    techstack: ["Python", "TensorFlow", "Pandas", "Scikit-Learn"],
+    createdAt: "2025-03-24T14:00:00Z",
+    userId: "user4",
+    type: "AI & ML",
+    finalized: false,
+  },
+  {
+    id: "5",
+    role: "DevOps Engineer",
+    level: "Senior",
+    questions: [
+      "What is Docker, and how does it work?",
+      "Explain Kubernetes and its key components.",
+    ],
+    techstack: ["Docker", "Kubernetes", "AWS", "CI/CD"],
+    createdAt: "2025-03-24T15:20:00Z",
+    userId: "user5",
+    type: "Infrastructure",
+    finalized: true,
+  },
+];
+
